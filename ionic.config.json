@@ -1,5 +1,7 @@
 {
   "name": "ok-qrscanner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

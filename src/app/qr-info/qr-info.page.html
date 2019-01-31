@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Информация по QR
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="!qrInfo && errorMessage">
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>QR-код</h3>
+        </ion-text>
+        <h2 text-wrap>{{qrCode}}</h2>
+        <h6 padding-top>{{errorMessage}}</h6>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list *ngIf="qrInfo">
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>QR-код</h3>
+        </ion-text>
+        <h2>{{qrInfo.qrCode}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>SKU</h3>
+        </ion-text>
+        <h2>{{qrInfo.sku}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>Фабрика</h3>
+        </ion-text>
+        <h2>{{qrInfo.factoryName}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3 text-wrap>Дистрибьютор</h3>
+        </ion-text>
+        <h2>{{qrInfo.companyName}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>Дата производства</h3>
+        </ion-text>
+        <h2>{{qrInfo.prodDate | date : 'dd.MM.yyyy'}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>Дата отгрузки</h3>
+        </ion-text>
+        <h2>{{qrInfo.invoiceDate | date : 'dd.MM.yyyy'}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text color="primary">
+          <h3>Номер заказа</h3>
+        </ion-text>
+        <h2>{{qrInfo.orderNumber}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div padding-top padding-start>
+    <ion-button expand="block" (click)="done()">Готово</ion-button>
+  </div>
+
+</ion-content>

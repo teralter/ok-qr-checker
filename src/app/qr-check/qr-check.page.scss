@@ -1,0 +1,13 @@
+ion-content {
+  --background: none transparent;
+}
+
+table.scanning{
+  td {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .square {
+    background: rgba(0, 0, 0, 0) !important;
+  }
+}
